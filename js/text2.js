@@ -11,6 +11,9 @@
 // img4.style.display="block";
 // img0.style.display="none";
 
+
+// 初始化
+// -----------获取相关元素---------
 //获取一组带图像的超链接
 var imagesA = document.getElementById("images").children;
 var txtList = document.querySelector(".txt-box").children;
@@ -77,7 +80,9 @@ function startChange() {
     timer = window.setInterval(rightImgGo, 1000);
 }
 var sliderDiv = document.querySelector(".slider");
-sliderDiv.addEventListener('mouseover', stopChange);
+// sliderDiv.addEventListener('mouseover',stopChange);
+// sliderDiv.addEventListener('mouseover',function(){window.setInterval(timer);})
+sliderDiv.addEventListener('mouseover', ()=>{clearInterval(timer);});
 sliderDiv.addEventListener('mouseout', startChange);
 
 // 为所有文本li注册鼠标移入事件，移入之后，当前li高亮，跳转到对应图片
